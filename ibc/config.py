@@ -8,6 +8,14 @@ class BaseConfig(object):
 
     LOGS_LEVEL = logging.INFO
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    JSON_AS_ASCII = False
+    FEED_URL = os.environ.get('FEED_URL', '')
+    FEED_TIMEOUT = os.environ.get('FEED_TIMEOUT', 30)
+
+
+class TestingConfig(BaseConfig):
+    DEBUG = True
+    TESTING = True
 
 
 class DevelopmentConfig(BaseConfig):

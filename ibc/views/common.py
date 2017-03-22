@@ -1,8 +1,9 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 
 common = Blueprint('common', __name__)
 
 
 @common.route('/', methods=['GET'])
-def home():
-    return 'Info Globo Backend Challenge'
+def index():
+    return jsonify({"service": "Info Globo Backend Challenge",
+                    "version": "1.0"})

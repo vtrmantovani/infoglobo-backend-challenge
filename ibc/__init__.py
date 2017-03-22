@@ -29,3 +29,5 @@ def configure_logger(app):
 def register_blueprints_and_error_handling(app):
     from ibc.views.common import common
     app.register_blueprint(common)
+    from ibc.views.api import api
+    app.register_blueprint(api)
