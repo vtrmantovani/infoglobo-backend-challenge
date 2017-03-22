@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from flask import Blueprint, jsonify
-from ibc import business
+from ibc import auth, business
 
 api = Blueprint('api', __name__, url_prefix='/api')
 
 
 @api.route('/', methods=['GET'])
+@auth.login_required
 def index():
     file_name = 'feed.xml'
     business.create_update_file_xml(file_name)

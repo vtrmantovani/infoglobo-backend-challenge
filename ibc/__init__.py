@@ -3,8 +3,22 @@ import os
 import sys
 
 from flask import Flask
+from flask_httpauth import HTTPBasicAuth
 
 logger = logging.getLogger(__name__)
+
+users = {
+    "admin": "password",
+}
+
+auth = HTTPBasicAuth()
+
+
+@auth.get_password
+def get_pw(username):
+    if username in users:
+        return users.get(username)
+    return None
 
 
 def create_app(config_var=os.getenv('DEPLOY_ENV', 'Development')):
