@@ -22,6 +22,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     LOGS_LEVEL = logging.DEBUG
     SECRET_KEY = 'b21032d50cbf2bbfe56a'
+    FEED_URL = 'http://revistaautoesporte.globo.com/rss/ultimas/feed.xml'
 
 
 class StagingConfig(BaseConfig):

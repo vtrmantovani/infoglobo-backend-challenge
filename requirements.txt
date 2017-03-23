@@ -3,3 +3,5 @@ Flask==0.12
 Flask-HTTPAuth==3.2.2
 Flask-Script==2.0.5
 requests==2.13
+newrelic==2.70.0.51
+uwsgi==2.0.14
