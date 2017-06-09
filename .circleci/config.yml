@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:3.5
+        environment:
+          - FEED_URL: http://revistaautoesporte.globo.com/rss/ultimas/feed.xml
+          - FEED_TIMEOUT: 30
+    working_directory: "~/ibc/"
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - cache-{{ .Branch }}
+            - cache-master
+      - run:
+          name: Install Dependencies
+          command: pip install -r requirements-dev.txt
+      - run:
+          name: Unit tests
+          command: make test
+      - run: bash .circleci/setup-heroku.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "48:a0:87:54:ca:75:32:12:c6:9e:a2:77:a4:7a:08:a4"
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push heroku master
+            fi

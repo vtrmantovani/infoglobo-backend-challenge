@@ -23,3 +23,8 @@ Info Globo Backend Challenge is an application to manage as rss information.
 * Link : https://infoglobo-backend-challenge.herokuapp.com
 * User: admin
 * Password: password
+
+
+### WIKI ###
+
+* https://github.com/CircleCI-Public/circleci-demo-python-flask
