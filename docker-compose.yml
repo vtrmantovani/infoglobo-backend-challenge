@@ -1,0 +1,6 @@
+version: '3'
+services:
+  web:
+    image: "vtrmantovani/info-globo"
+    ports:
+     - "9000:9000"
