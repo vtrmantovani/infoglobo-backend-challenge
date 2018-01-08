@@ -15,6 +15,6 @@ coverage: clean
 	nosetests --with-coverage --cover-package=lbo
 
 build-eb: clean
-	rm infoglobo-backend-challenge.zip
+	if [ -a infoglobo-backend-challenge.zip ] ; then rm infoglobo-backend-challenge.zip ; fi;
 	zip infoglobo-backend-challenge.zip -r * .[^.]*
 	zip -d infoglobo-backend-challenge __MACOSX/\*
