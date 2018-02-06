@@ -26,5 +26,5 @@ ADD ./dockerfiles/uwsgi.ini /home/infoglobo/
 ADD ./dockerfiles/newrelic.ini /home/infoglobo/
 ENV NEW_RELIC_CONFIG_FILE=/home/infoglobo/newrelic.ini
 
-EXPOSE 9000
+EXPOSE 8080
 CMD ["/home/infoglobo/.venv/bin/newrelic-admin", "run-program", "/home/infoglobo/.venv/bin/uwsgi", "--ini", "/home/infoglobo/uwsgi.ini"]
