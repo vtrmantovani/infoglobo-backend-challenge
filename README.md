@@ -20,9 +20,13 @@ Info Globo Backend Challenge is an application to manage as rss information.
 
 ### Demo ###
 
-* Link : https://infoglobo-backend-challenge.herokuapp.com
+* Link : https://infoglobo-backend-challenge.herokuapp.com/api
 * User: admin
 * Password: password
+
+### Test link ###
+
+* https://github.com/Infoglobo/desafio-back-end
 
 
 ### WIKI ###
